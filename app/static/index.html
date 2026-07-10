@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RAG Pipeline From Scratch</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="panel">
+        <div>
+          <p class="eyebrow">Local document RAG</p>
+          <h1>RAG Pipeline From Scratch</h1>
+          <p class="lede">Ingest documents, retrieve relevant chunks, and generate grounded answers with citations.</p>
+        </div>
+        <div class="status" id="health">Checking index...</div>
+      </section>
+
+      <section class="grid">
+        <form class="panel" id="folderForm">
+          <h2>Ingest Folder</h2>
+          <label for="path">Path</label>
+          <div class="row">
+            <input id="path" value="data/sample_docs" />
+            <button type="submit">Ingest</button>
+          </div>
+          <p id="ingestResult" class="result"></p>
+        </form>
+
+        <form class="panel" id="uploadForm">
+          <h2>Upload Document</h2>
+          <label for="file">File</label>
+          <div class="row">
+            <input id="file" type="file" accept=".txt,.md,.pdf" />
+            <button type="submit">Upload</button>
+          </div>
+          <p id="uploadResult" class="result"></p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <form id="queryForm">
+          <h2>Ask a Question</h2>
+          <textarea id="question" rows="4" placeholder="What does this project demonstrate?"></textarea>
+          <button type="submit">Ask</button>
+        </form>
+        <div id="answer" class="answer"></div>
+        <div id="sources" class="sources"></div>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
