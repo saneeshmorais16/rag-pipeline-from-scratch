@@ -1,0 +1,434 @@
+{
+  "backend": "semantic",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "dataset": "12 fictional policy documents, 24 answerable questions, 6 unanswerable questions; see dataset.json",
+  "retrieval_top1_accuracy": 1.0,
+  "retrieval_hit_at_3": 1.0,
+  "citation_document_precision": 0.8571428571428571,
+  "citation_document_recall": 1.0,
+  "unanswerable_rejection_rate": 0.3333333333333333,
+  "citation_counts": {
+    "relevant": 24,
+    "total": 28
+  },
+  "methodology": "Default relevance threshold 0.18; top_k=3; one chunk per document. Citation precision is expected-document membership, NOT semantic entailment. Rejected answers have no counted citations.",
+  "limitations": "Small author-created diagnostic corpus; not held out from development. Lexical overlap and distinctive names make retrieval easier; similarity thresholds cannot establish answerability. No generative model evaluated.",
+  "cases": [
+    {
+      "question": "What is the Orion refund deadline?",
+      "expected_document": "refunds",
+      "top_documents": [
+        "refunds",
+        "expenses",
+        "cancellation"
+      ],
+      "cited_documents": [
+        "refunds"
+      ],
+      "answer": "Orion refunds are available within 30 days of purchase. Refund requests require a receipt.",
+      "is_supported": true
+    },
+    {
+      "question": "How long after purchase can I request my money back?",
+      "expected_document": "refunds",
+      "top_documents": [
+        "refunds",
+        "expenses",
+        "access"
+      ],
+      "cited_documents": [
+        "refunds"
+      ],
+      "answer": "Orion refunds are available within 30 days of purchase.",
+      "is_supported": true
+    },
+    {
+      "question": "How long does Cedar shipping take?",
+      "expected_document": "shipping",
+      "top_documents": [
+        "shipping",
+        "maintenance",
+        "training"
+      ],
+      "cited_documents": [
+        "shipping"
+      ],
+      "answer": "Cedar shipping takes five business days. Cedar delivery tracking is sent by email.",
+      "is_supported": true
+    },
+    {
+      "question": "When will my Cedar package arrive?",
+      "expected_document": "shipping",
+      "top_documents": [
+        "shipping",
+        "training",
+        "maintenance"
+      ],
+      "cited_documents": [
+        "shipping"
+      ],
+      "answer": "Cedar shipping takes five business days. Cedar delivery tracking is sent by email.",
+      "is_supported": true
+    },
+    {
+      "question": "How many characters must Nimbus passwords contain?",
+      "expected_document": "passwords",
+      "top_documents": [
+        "passwords",
+        "storage",
+        "access"
+      ],
+      "cited_documents": [
+        "passwords"
+      ],
+      "answer": "Nimbus passwords must contain at least 14 characters. Nimbus password resets use a verified email link.",
+      "is_supported": true
+    },
+    {
+      "question": "How do I reset my Nimbus login credential?",
+      "expected_document": "passwords",
+      "top_documents": [
+        "passwords",
+        "access",
+        "training"
+      ],
+      "cited_documents": [
+        "passwords"
+      ],
+      "answer": "Nimbus passwords must contain at least 14 characters. Nimbus password resets use a verified email link.",
+      "is_supported": true
+    },
+    {
+      "question": "When do Atlas backups run?",
+      "expected_document": "backups",
+      "top_documents": [
+        "backups",
+        "maintenance",
+        "refunds"
+      ],
+      "cited_documents": [
+        "backups"
+      ],
+      "answer": "Atlas backups run every night at 02:00 UTC. Atlas backup snapshots are retained for seven days.",
+      "is_supported": true
+    },
+    {
+      "question": "How long does Atlas keep recovery snapshots?",
+      "expected_document": "backups",
+      "top_documents": [
+        "backups",
+        "retention",
+        "refunds"
+      ],
+      "cited_documents": [
+        "backups"
+      ],
+      "answer": "Atlas backups run every night at 02:00 UTC. Atlas backup snapshots are retained for seven days.",
+      "is_supported": true
+    },
+    {
+      "question": "What are Vega support hours?",
+      "expected_document": "support",
+      "top_documents": [
+        "support",
+        "maintenance",
+        "training"
+      ],
+      "cited_documents": [
+        "support"
+      ],
+      "answer": "Vega support is available Monday through Friday from 09:00 to 17:00 UTC. Vega support tickets are submitted through the help portal.",
+      "is_supported": true
+    },
+    {
+      "question": "Where can I ask the Vega team for help?",
+      "expected_document": "support",
+      "top_documents": [
+        "support",
+        "maintenance",
+        "training"
+      ],
+      "cited_documents": [
+        "support"
+      ],
+      "answer": "Vega support is available Monday through Friday from 09:00 to 17:00 UTC. Vega support tickets are submitted through the help portal.",
+      "is_supported": true
+    },
+    {
+      "question": "How long are Lumen audit logs retained?",
+      "expected_document": "retention",
+      "top_documents": [
+        "retention",
+        "backups",
+        "access"
+      ],
+      "cited_documents": [
+        "retention"
+      ],
+      "answer": "Lumen audit logs are retained for 90 days. Lumen audit log export requires administrator approval.",
+      "is_supported": true
+    },
+    {
+      "question": "Who must approve downloading Lumen audit records?",
+      "expected_document": "retention",
+      "top_documents": [
+        "retention",
+        "expenses",
+        "storage"
+      ],
+      "cited_documents": [
+        "retention"
+      ],
+      "answer": "Lumen audit logs are retained for 90 days. Lumen audit log export requires administrator approval.",
+      "is_supported": true
+    },
+    {
+      "question": "When must Comet expense claims be submitted?",
+      "expected_document": "expenses",
+      "top_documents": [
+        "expenses",
+        "refunds",
+        "cancellation"
+      ],
+      "cited_documents": [
+        "expenses"
+      ],
+      "answer": "Comet expense claims must be submitted within 14 days. Comet expense claims above 200 pounds need manager approval.",
+      "is_supported": true
+    },
+    {
+      "question": "Who authorises a Comet expense of 250 pounds?",
+      "expected_document": "expenses",
+      "top_documents": [
+        "expenses",
+        "refunds",
+        "storage"
+      ],
+      "cited_documents": [
+        "expenses"
+      ],
+      "answer": "Comet expense claims must be submitted within 14 days. Comet expense claims above 200 pounds need manager approval.",
+      "is_supported": true
+    },
+    {
+      "question": "When does Juniper training occur?",
+      "expected_document": "training",
+      "top_documents": [
+        "training",
+        "maintenance",
+        "shipping"
+      ],
+      "cited_documents": [
+        "training"
+      ],
+      "answer": "Juniper training occurs on the first Tuesday each month. Juniper training registration closes two days before the session.",
+      "is_supported": true
+    },
+    {
+      "question": "When is the deadline to register for Juniper lessons?",
+      "expected_document": "training",
+      "top_documents": [
+        "training",
+        "maintenance",
+        "support"
+      ],
+      "cited_documents": [
+        "training"
+      ],
+      "answer": "Juniper training occurs on the first Tuesday each month. Juniper training registration closes two days before the session.",
+      "is_supported": true
+    },
+    {
+      "question": "When do Polaris access tokens expire?",
+      "expected_document": "access",
+      "top_documents": [
+        "access",
+        "training",
+        "cancellation"
+      ],
+      "cited_documents": [
+        "access"
+      ],
+      "answer": "Polaris access tokens expire after 60 minutes. Polaris access tokens can be renewed using a refresh token.",
+      "is_supported": true
+    },
+    {
+      "question": "How can I extend a Polaris session?",
+      "expected_document": "access",
+      "top_documents": [
+        "access",
+        "training",
+        "maintenance"
+      ],
+      "cited_documents": [
+        "access"
+      ],
+      "answer": "Polaris access tokens expire after 60 minutes. Polaris access tokens can be renewed using a refresh token.",
+      "is_supported": true
+    },
+    {
+      "question": "When is Willow maintenance scheduled?",
+      "expected_document": "maintenance",
+      "top_documents": [
+        "maintenance",
+        "training",
+        "shipping"
+      ],
+      "cited_documents": [
+        "maintenance"
+      ],
+      "answer": "Willow maintenance is scheduled on Sunday at 01:00 UTC. Willow maintenance lasts two hours.",
+      "is_supported": true
+    },
+    {
+      "question": "How long is the Willow service downtime?",
+      "expected_document": "maintenance",
+      "top_documents": [
+        "maintenance",
+        "training",
+        "shipping"
+      ],
+      "cited_documents": [
+        "maintenance"
+      ],
+      "answer": "Willow maintenance is scheduled on Sunday at 01:00 UTC. Willow maintenance lasts two hours.",
+      "is_supported": true
+    },
+    {
+      "question": "How much Aspen storage is included?",
+      "expected_document": "storage",
+      "top_documents": [
+        "storage",
+        "maintenance",
+        "shipping"
+      ],
+      "cited_documents": [
+        "storage"
+      ],
+      "answer": "Aspen storage includes 10 gigabytes per account. Aspen storage upgrades require a paid subscription.",
+      "is_supported": true
+    },
+    {
+      "question": "Do I need to pay to expand my Aspen storage?",
+      "expected_document": "storage",
+      "top_documents": [
+        "storage",
+        "refunds",
+        "shipping"
+      ],
+      "cited_documents": [
+        "storage"
+      ],
+      "answer": "Aspen storage includes 10 gigabytes per account. Aspen storage upgrades require a paid subscription.",
+      "is_supported": true
+    },
+    {
+      "question": "When does Solstice cancellation take effect?",
+      "expected_document": "cancellation",
+      "top_documents": [
+        "cancellation",
+        "access",
+        "training"
+      ],
+      "cited_documents": [
+        "cancellation"
+      ],
+      "answer": "Solstice cancellation takes effect at the end of the billing month. Solstice cancellation is available from account settings.",
+      "is_supported": true
+    },
+    {
+      "question": "Where can I stop my Solstice subscription?",
+      "expected_document": "cancellation",
+      "top_documents": [
+        "cancellation",
+        "access",
+        "expenses"
+      ],
+      "cited_documents": [
+        "cancellation"
+      ],
+      "answer": "Solstice cancellation takes effect at the end of the billing month. Solstice cancellation is available from account settings.",
+      "is_supported": true
+    },
+    {
+      "question": "Who won the lunar chess tournament?",
+      "expected_document": null,
+      "top_documents": [
+        "expenses",
+        "maintenance",
+        "refunds"
+      ],
+      "cited_documents": [],
+      "answer": "I could not find an answer supported by the ingested documents.",
+      "is_supported": false
+    },
+    {
+      "question": "What is the boiling point of xenon?",
+      "expected_document": null,
+      "top_documents": [
+        "training",
+        "passwords",
+        "retention"
+      ],
+      "cited_documents": [],
+      "answer": "I could not find an answer supported by the ingested documents.",
+      "is_supported": false
+    },
+    {
+      "question": "What is the Orion chief executive salary?",
+      "expected_document": null,
+      "top_documents": [
+        "refunds",
+        "expenses",
+        "storage"
+      ],
+      "cited_documents": [
+        "refunds"
+      ],
+      "answer": "Orion refunds are available within 30 days of purchase.",
+      "is_supported": true
+    },
+    {
+      "question": "Does Cedar deliver to Antarctica?",
+      "expected_document": null,
+      "top_documents": [
+        "shipping",
+        "storage",
+        "training"
+      ],
+      "cited_documents": [
+        "shipping"
+      ],
+      "answer": "Cedar shipping takes five business days. Cedar delivery tracking is sent by email.",
+      "is_supported": true
+    },
+    {
+      "question": "What encryption algorithm protects Atlas backups?",
+      "expected_document": null,
+      "top_documents": [
+        "backups",
+        "storage",
+        "cancellation"
+      ],
+      "cited_documents": [
+        "backups"
+      ],
+      "answer": "Atlas backups run every night at 02:00 UTC. Atlas backup snapshots are retained for seven days.",
+      "is_supported": true
+    },
+    {
+      "question": "Can I transfer Aspen storage to another account?",
+      "expected_document": null,
+      "top_documents": [
+        "storage",
+        "retention",
+        "passwords"
+      ],
+      "cited_documents": [
+        "storage"
+      ],
+      "answer": "Aspen storage includes 10 gigabytes per account. Aspen storage upgrades require a paid subscription.",
+      "is_supported": true
+    }
+  ]
+}

@@ -22,9 +22,12 @@ class RAGPipeline:
         if llm_answer:
             return {"answer": llm_answer, "sources": strong_sources, "is_supported": True}
 
+        # The extractive fallback quotes only its highest-ranked document.
+        # Cite exactly that document, rather than attaching unused retrieval hits.
+        extractive_sources = strong_sources[:1]
         return {
-            "answer": self._extractive_answer(question, strong_sources),
-            "sources": strong_sources,
+            "answer": self._extractive_answer(question, extractive_sources),
+            "sources": extractive_sources,
             "is_supported": True,
         }
 

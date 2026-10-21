@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import math
+import warnings
 import re
 from typing import Protocol
 
@@ -50,7 +51,10 @@ class HashingEmbedder:
 
 
 def get_embedder(model_name: str) -> Embedder:
+    if model_name == "hashing":
+        return HashingEmbedder()
     try:
         return SentenceTransformerEmbedder(model_name)
-    except Exception:
+    except Exception as exc:
+        warnings.warn(f"Semantic embedding model unavailable ({type(exc).__name__}); using lexical hashing embeddings.", RuntimeWarning)
         return HashingEmbedder()

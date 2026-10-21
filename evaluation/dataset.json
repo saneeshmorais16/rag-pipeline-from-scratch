@@ -1,0 +1,175 @@
+{
+  "provenance": "Author-created fictional company policies; no real customers or confidential documents.",
+  "documents": [
+    {
+      "id": "refunds",
+      "text": "Orion refunds are available within 30 days of purchase. Refund requests require a receipt."
+    },
+    {
+      "id": "shipping",
+      "text": "Cedar shipping takes five business days. Cedar delivery tracking is sent by email."
+    },
+    {
+      "id": "passwords",
+      "text": "Nimbus passwords must contain at least 14 characters. Nimbus password resets use a verified email link."
+    },
+    {
+      "id": "backups",
+      "text": "Atlas backups run every night at 02:00 UTC. Atlas backup snapshots are retained for seven days."
+    },
+    {
+      "id": "support",
+      "text": "Vega support is available Monday through Friday from 09:00 to 17:00 UTC. Vega support tickets are submitted through the help portal."
+    },
+    {
+      "id": "retention",
+      "text": "Lumen audit logs are retained for 90 days. Lumen audit log export requires administrator approval."
+    },
+    {
+      "id": "expenses",
+      "text": "Comet expense claims must be submitted within 14 days. Comet expense claims above 200 pounds need manager approval."
+    },
+    {
+      "id": "training",
+      "text": "Juniper training occurs on the first Tuesday each month. Juniper training registration closes two days before the session."
+    },
+    {
+      "id": "access",
+      "text": "Polaris access tokens expire after 60 minutes. Polaris access tokens can be renewed using a refresh token."
+    },
+    {
+      "id": "maintenance",
+      "text": "Willow maintenance is scheduled on Sunday at 01:00 UTC. Willow maintenance lasts two hours."
+    },
+    {
+      "id": "storage",
+      "text": "Aspen storage includes 10 gigabytes per account. Aspen storage upgrades require a paid subscription."
+    },
+    {
+      "id": "cancellation",
+      "text": "Solstice cancellation takes effect at the end of the billing month. Solstice cancellation is available from account settings."
+    }
+  ],
+  "queries": [
+    {
+      "question": "What is the Orion refund deadline?",
+      "expected_document": "refunds"
+    },
+    {
+      "question": "How long after purchase can I request my money back?",
+      "expected_document": "refunds"
+    },
+    {
+      "question": "How long does Cedar shipping take?",
+      "expected_document": "shipping"
+    },
+    {
+      "question": "When will my Cedar package arrive?",
+      "expected_document": "shipping"
+    },
+    {
+      "question": "How many characters must Nimbus passwords contain?",
+      "expected_document": "passwords"
+    },
+    {
+      "question": "How do I reset my Nimbus login credential?",
+      "expected_document": "passwords"
+    },
+    {
+      "question": "When do Atlas backups run?",
+      "expected_document": "backups"
+    },
+    {
+      "question": "How long does Atlas keep recovery snapshots?",
+      "expected_document": "backups"
+    },
+    {
+      "question": "What are Vega support hours?",
+      "expected_document": "support"
+    },
+    {
+      "question": "Where can I ask the Vega team for help?",
+      "expected_document": "support"
+    },
+    {
+      "question": "How long are Lumen audit logs retained?",
+      "expected_document": "retention"
+    },
+    {
+      "question": "Who must approve downloading Lumen audit records?",
+      "expected_document": "retention"
+    },
+    {
+      "question": "When must Comet expense claims be submitted?",
+      "expected_document": "expenses"
+    },
+    {
+      "question": "Who authorises a Comet expense of 250 pounds?",
+      "expected_document": "expenses"
+    },
+    {
+      "question": "When does Juniper training occur?",
+      "expected_document": "training"
+    },
+    {
+      "question": "When is the deadline to register for Juniper lessons?",
+      "expected_document": "training"
+    },
+    {
+      "question": "When do Polaris access tokens expire?",
+      "expected_document": "access"
+    },
+    {
+      "question": "How can I extend a Polaris session?",
+      "expected_document": "access"
+    },
+    {
+      "question": "When is Willow maintenance scheduled?",
+      "expected_document": "maintenance"
+    },
+    {
+      "question": "How long is the Willow service downtime?",
+      "expected_document": "maintenance"
+    },
+    {
+      "question": "How much Aspen storage is included?",
+      "expected_document": "storage"
+    },
+    {
+      "question": "Do I need to pay to expand my Aspen storage?",
+      "expected_document": "storage"
+    },
+    {
+      "question": "When does Solstice cancellation take effect?",
+      "expected_document": "cancellation"
+    },
+    {
+      "question": "Where can I stop my Solstice subscription?",
+      "expected_document": "cancellation"
+    },
+    {
+      "question": "Who won the lunar chess tournament?",
+      "expected_document": null
+    },
+    {
+      "question": "What is the boiling point of xenon?",
+      "expected_document": null
+    },
+    {
+      "question": "What is the Orion chief executive salary?",
+      "expected_document": null
+    },
+    {
+      "question": "Does Cedar deliver to Antarctica?",
+      "expected_document": null
+    },
+    {
+      "question": "What encryption algorithm protects Atlas backups?",
+      "expected_document": null
+    },
+    {
+      "question": "Can I transfer Aspen storage to another account?",
+      "expected_document": null
+    }
+  ]
+}

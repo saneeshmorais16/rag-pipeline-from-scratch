@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from contextlib import contextmanager
 import math
 import sqlite3
 from pathlib import Path
@@ -75,10 +76,15 @@ class SQLiteVectorStore:
         with self._connect() as conn:
             return int(conn.execute("SELECT COUNT(*) FROM chunks").fetchone()[0])
 
-    def _connect(self) -> sqlite3.Connection:
+    @contextmanager
+    def _connect(self):
         conn = sqlite3.connect(self.db_path)
         conn.row_factory = sqlite3.Row
-        return conn
+        try:
+            with conn:
+                yield conn
+        finally:
+            conn.close()
 
     def _init_db(self) -> None:
         with self._connect() as conn:
